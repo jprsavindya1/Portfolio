@@ -1,0 +1,6 @@
+# Ignore IDE files
+.vscode/
+.idea/
+.gemini/
+.DS_Store
+Thumbs.db
