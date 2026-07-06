@@ -691,7 +691,7 @@ a {
    ========================================================================== */
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
     gap: 2.5rem;
 }
 
@@ -879,7 +879,8 @@ a {
 .project-actions {
     display: flex;
     align-items: center;
-    gap: 1.5rem;
+    flex-wrap: wrap;
+    gap: 1rem;
 }
 
 .repo-locked-badge {
@@ -961,6 +962,7 @@ a {
     font-size: 1.05rem;
     font-weight: 600;
     transition: var(--transition);
+    word-break: break-all;
 }
 
 .method-text a:hover {
@@ -1519,6 +1521,10 @@ a {
 @media (max-width: 480px) {
     .about-stats {
         grid-template-columns: 1fr;
+    }
+    
+    .contact-card {
+        padding: 1.5rem 1.2rem;
     }
 }
 
