@@ -1427,8 +1427,10 @@ a {
         background: var(--bg-surface);
         flex-direction: column;
         align-items: center;
-        justify-content: center;
-        gap: 3rem;
+        justify-content: flex-start;
+        padding: 4rem 2rem;
+        gap: 2.5rem;
+        overflow-y: auto;
         transition: 0.4s ease;
         border-top: 1px solid var(--border-color);
     }
@@ -1447,6 +1449,17 @@ a {
     
     .hero-subtitle {
         font-size: 1.5rem;
+    }
+    
+    .hero-actions {
+        flex-direction: column;
+        width: 100%;
+        gap: 1rem;
+    }
+    
+    .hero-actions .btn {
+        width: 100%;
+        justify-content: center;
     }
     
     .avatar-glow-container {
@@ -1491,19 +1504,19 @@ a {
         flex-direction: column;
         gap: 1rem;
     }
+    
+    .modal-content {
+        padding: 2.5rem 1.5rem 1.5rem 1.5rem;
+        border-radius: 16px;
+    }
+    
+    .modal-close {
+        top: 1rem;
+        right: 1rem;
+    }
 }
 
 @media (max-width: 480px) {
-    .hero-actions {
-        flex-direction: column;
-        width: 100%;
-    }
-    
-    .btn {
-        width: 100%;
-        justify-content: center;
-    }
-    
     .about-stats {
         grid-template-columns: 1fr;
     }
@@ -1571,8 +1584,15 @@ a {
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     padding-bottom: 0.8rem;
     margin-bottom: 1.5rem;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; /* Hide scrollbar for Firefox */
     flex-shrink: 0;
+}
+.modal-tabs::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for Chrome/Safari/Edge */
 }
 .modal-tab-btn {
     background: rgba(255, 255, 255, 0.03);
@@ -1588,6 +1608,7 @@ a {
     gap: 0.5rem;
     font-family: var(--font-heading);
     font-weight: 500;
+    flex-shrink: 0;
 }
 .modal-tab-btn:hover {
     background: rgba(255, 255, 255, 0.07);
