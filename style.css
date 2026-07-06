@@ -947,6 +947,11 @@ a {
     font-size: 1.3rem;
 }
 
+.method-text {
+    min-width: 0;
+    word-break: break-all;
+}
+
 .method-text span {
     display: block;
 }
@@ -1502,6 +1507,10 @@ a {
         padding: 2rem 1.5rem;
     }
     
+    .method-item {
+        gap: 1rem;
+    }
+    
     .footer-container {
         flex-direction: column;
         gap: 1rem;
@@ -1524,7 +1533,11 @@ a {
     }
     
     .contact-card {
-        padding: 1.5rem 1.2rem;
+        padding: 1.5rem 1rem;
+    }
+    
+    .method-item {
+        gap: 0.8rem;
     }
 }
 
