@@ -344,4 +344,38 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    /* ==========================================================================
+       DARK/LIGHT THEME TOGGLE
+       ========================================================================== */
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeIcon = themeToggle ? themeToggle.querySelector('i') : null;
+    
+    // Check local storage for theme preference
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'light') {
+        document.body.classList.add('light-mode');
+        if (themeIcon) {
+            themeIcon.className = 'fa-solid fa-sun';
+        }
+    } else {
+        document.body.classList.remove('light-mode');
+        if (themeIcon) {
+            themeIcon.className = 'fa-solid fa-moon';
+        }
+    }
+    
+    if (themeToggle && themeIcon) {
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('light-mode');
+            
+            if (document.body.classList.contains('light-mode')) {
+                themeIcon.className = 'fa-solid fa-sun';
+                localStorage.setItem('theme', 'light');
+            } else {
+                themeIcon.className = 'fa-solid fa-moon';
+                localStorage.setItem('theme', 'dark');
+            }
+        });
+    }
+
 });
